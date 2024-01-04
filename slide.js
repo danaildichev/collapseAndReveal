@@ -1,21 +1,21 @@
 class Slide
 {
     /**
-     * toggle a sled & checkbox based on checked state.
-     * handles up/down animation as a whole or in steps.
+     * toggle a content container (sled) & checkbox based on checked state.
+     * handles up/down animation times as a whole or in steps.
      * handles sled height by css max-h class name
      *
      * @param {string} checkID checkbox for toggling
-     * @param {string} slideID the sled to be toggled
+     * @param {string} slideID the content container to be toggled
      * @param {string} animationType "scale", "fade", or "both"
-     * @param {number} durationUp time for slide up animation
-     * @param {boolean} staggerUp if display/height animation are in sync
-     * @param {number} durationDown time for slide down animation
-     * @param {boolean} staggerDown if height/display animation are in sync
+     * @param {number} durationUp milliseconds for slide up animation
+     * @param {boolean} staggerUp if display/height animation are out of sync
+     * @param {number} durationDown milliseconds for slide down animation
+     * @param {boolean} staggerDown if height/display animation are out of sync
      * @param {string} heightClass css for sled max height
      * @param {string} iconID the icon to be toggled after sliding
-     * @param {number} iconDelayUp time offset for icon animation
-     * @param {number} iconDelayDown time offset for icon animation
+     * @param {number} iconDelayUp milliseconds offset for icon animation
+     * @param {number} iconDelayDown milliseconds offset for icon animation
      */
     constructor(checkID, slideID, animationType, durationUp, staggerUp, durationDown, staggerDown, heightClass, iconID, iconDelayUp, iconDelayDown)
     {
@@ -44,7 +44,7 @@ class Slide
     /**
      * toggle status of checkbox
      *
-     * @return {void}
+     * @return undefined
      */
     toggleCheck() { this.check.checked = !this.isChecked(); }
 
@@ -52,7 +52,7 @@ class Slide
     /**
      * perform swapping of css display classes for sliding up
      *
-     * @return {void}
+     * @return undefined
      */
     slideUpAnimation()
     {
@@ -72,7 +72,7 @@ class Slide
      *
      * @param {number} duration time for slide animation
      *
-     * @return {void}
+     * @return undefined
      */
     slideUp(duration)
     {
@@ -92,7 +92,7 @@ class Slide
     /**
      * perform swapping of css display classes for sliding down
      *
-     * @return {void}
+     * @return undefined
      */
     slideDownAnimation()
     {
@@ -112,7 +112,7 @@ class Slide
      *
      * @param {number} duration time for slide animation
      *
-     * @return {void}
+     * @return undefined
      */
     slideDown(duration)
     {
@@ -133,7 +133,7 @@ class Slide
     /**
      * handle slide animations
      *
-     * @return {void}
+     * @return undefined
      */
     toggleSlide()
     {
