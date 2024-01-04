@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+	
+		<title>Collapse & Reveal</title>
+		
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+		<style>
+		
+		/* classes for fading */
+		.fade { transition: opacity; transition-duration: 0.3s; }
+		.faded-in { opacity: 100%; }
+		.faded-out { opacity: 0%; }
+		
+		/* classes for rotating icons */
+		.rotate-180 { transform: rotate(180deg); }
+		
+		</style>
+	
+	</head>
+  
+	<body>
+	
+		<div class="text-2xl">
+			<p>This demo uses Tailwind, Daisy UI, and FontAwesome.</p>
+			<p>Use the toggle button to trigger the collapse or reveal animation for each example.</p>
+		</div>
+		
+		<!-- main content -->
+    <main>
+
+        <!--******************************************************-->
+        <!-- section: slide example 01 -->
+        <section class="py-6">
+
+            <div class="container mx-auto px-6 sm:px-0">
+
+                <div class="bg-base-200 p-6 rounded-2xl">
+
+                    <!-------------------->
+                    <!-- section header -->
+                    <header class="mb-6">
+                        <div class="pb-3">
+                            <h3 class="text-4xl mr-4 pl-6 block md:inline font-bold text-primary">Slide Example 1<span class="ml-1">:</span></h3>
+                            <p class="text-3xl block pl-6 md:pl-0 md:inline">Scale, no stagger, all intervals 1 sec</p>
+                        </div>
+                        <div class="glass h-3 shadow-none rounded-b-2xl"></div>
+                    </header>
+                    <!-- end section header -->
+                    <!------------------------>
+
+
+                    <!------------------------------------>
+                    <!-- btn: slide toggle -->
+                    <div class="mb-6 w-[50%] mx-auto">
+
+                        <button id="" class="btn btn-neutral btn-block text-xl"
+                                onclick="slide1.toggleSlide()">
+
+                            <!-- icon: up/down -->
+                            <i id="slideExample_icon" class="fa-solid fa-rotate transition-transform duration-300"></i>
+
+                        </button>
+
+                    </div>
+                    <!-- end btn: slide toggle -->
+                    <!---------------------------------------->
+
+
+                    <!--=====================================-->
+                    <!-- example content -->
+                    <div id="slideExample_container" class="transition-all duration-1000 fade faded-in scale-y-100 max-h-[500px]">
+
+                        <!-- checkbox for slide toggle -->
+                        <input type="checkbox" id="slideExample_checkbox" class="hidden" checked>
+
+                        <p class="text-2xl mb-6">SLIDE EXAMPLE CONTENTS</p>
+                        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt dolore ex harum inventore labore laudantium officia, perspiciatis porro quaerat rem reprehenderit suscipit veritatis. Architecto aspernatur at maxime quae velit?</span><span>Ad autem, blanditiis consectetur consequuntur dignissimos et facere nulla praesentium quae, quibusdam quisquam totam. Adipisci, aut doloremque error excepturi facilis iusto, nihil nisi officiis quaerat, quis reiciendis tempora! Quis, suscipit.</span><span>Accusantium amet atque consectetur distinctio doloremque dolorum eligendi eum facilis fugit impedit in modi mollitia nemo nostrum obcaecati quas repellendus rerum velit, voluptatem voluptatibus? Ab error non porro quos reprehenderit?</span><span>Ab accusamus ad cum eligendi minima nam optio quia veniam. Asperiores at consectetur dolorem, exercitationem in iusto magnam molestiae nam nihil praesentium quo rem repudiandae sequi tempore vel vero voluptate?</span><span>Aliquam aliquid, assumenda beatae consequatur cum ducimus hic illum impedit inventore, ipsam provident qui quia quibusdam sed suscipit voluptate voluptatibus? A atque earum, laudantium maiores tempore temporibus. Iste, necessitatibus, recusandae.</span><span>Accusantium beatae cupiditate dignissimos, exercitationem laudantium maiores odit pariatur qui saepe vitae. Aliquid, esse eveniet ipsam itaque nemo recusandae sed ullam? A aspernatur culpa cumque eum ex, labore nostrum quis?</span><span>Ab, aperiam aut commodi debitis delectus ducimus harum ipsum magni molestiae, necessitatibus nesciunt non rerum sequi sint velit. Aut est, ex harum inventore odio porro qui totam. Asperiores, deleniti, rem.</span></p>
+
+                    </div>
+                    <!-- end example content -->
+                    <!--=========================================-->
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- end section: slide example 01 -->
+        <!--******************************************************-->
+
+
+        <!--******************************************************-->
+        <!-- section: slide example 2 -->
+        <section class="py-6">
+
+            <div class="container mx-auto px-6 sm:px-0">
+
+                <div class="bg-base-200 p-6 rounded-2xl">
+
+                    <!-------------------->
+                    <!-- section header -->
+                    <header class="mb-6">
+                        <div class="pb-3">
+                            <h3 class="text-4xl mr-4 pl-6 block md:inline font-bold text-primary">Slide Example 2<span class="ml-1">:</span></h3>
+                            <p class="text-3xl block pl-6 md:pl-0 md:inline">Fade, no stagger, all intervals 1 sec</p>
+                        </div>
+                        <div class="glass h-3 shadow-none rounded-b-2xl"></div>
+                    </header>
+                    <!-- end section header -->
+                    <!------------------------>
+
+
+                    <!------------------------------------>
+                    <!-- btn: slide toggle -->
+                    <div class="mb-6 w-[50%] mx-auto">
+
+                        <button id="btn_slideExample2" class="btn btn-neutral btn-block text-xl"
+                                onclick="slide2.toggleSlide()">
+
+                            <!-- icon: up/down -->
+                            <i id="slideExample2_icon" class="fa-solid fa-rotate transition-transform duration-300"></i>
+
+                        </button>
+
+                    </div>
+                    <!-- end btn: slide toggle -->
+                    <!---------------------------------------->
+
+
+                    <!--=====================================-->
+                    <!-- example content -->
+                    <div id="slideExample2_container" class="transition-all duration-1000 fade faded-in scale-y-100 max-h-[500px]">
+
+                        <!-- checkbox for slide toggle -->
+                        <input type="checkbox" id="slideExample2_checkbox" class="hidden" checked>
+
+                        <p class="text-2xl mb-6">SLIDE EXAMPLE CONTENTS</p>
+                        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt dolore ex harum inventore labore laudantium officia, perspiciatis porro quaerat rem reprehenderit suscipit veritatis. Architecto aspernatur at maxime quae velit?</span><span>Ad autem, blanditiis consectetur consequuntur dignissimos et facere nulla praesentium quae, quibusdam quisquam totam. Adipisci, aut doloremque error excepturi facilis iusto, nihil nisi officiis quaerat, quis reiciendis tempora! Quis, suscipit.</span><span>Accusantium amet atque consectetur distinctio doloremque dolorum eligendi eum facilis fugit impedit in modi mollitia nemo nostrum obcaecati quas repellendus rerum velit, voluptatem voluptatibus? Ab error non porro quos reprehenderit?</span><span>Ab accusamus ad cum eligendi minima nam optio quia veniam. Asperiores at consectetur dolorem, exercitationem in iusto magnam molestiae nam nihil praesentium quo rem repudiandae sequi tempore vel vero voluptate?</span><span>Aliquam aliquid, assumenda beatae consequatur cum ducimus hic illum impedit inventore, ipsam provident qui quia quibusdam sed suscipit voluptate voluptatibus? A atque earum, laudantium maiores tempore temporibus. Iste, necessitatibus, recusandae.</span><span>Accusantium beatae cupiditate dignissimos, exercitationem laudantium maiores odit pariatur qui saepe vitae. Aliquid, esse eveniet ipsam itaque nemo recusandae sed ullam? A aspernatur culpa cumque eum ex, labore nostrum quis?</span><span>Ab, aperiam aut commodi debitis delectus ducimus harum ipsum magni molestiae, necessitatibus nesciunt non rerum sequi sint velit. Aut est, ex harum inventore odio porro qui totam. Asperiores, deleniti, rem.</span></p>
+
+                    </div>
+                    <!-- end example content -->
+                    <!--=========================================-->
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+        <!-- end section: slide example 2 -->
+        <!--******************************************************-->
+
+
+        <!--******************************************************-->
+        <!-- section: slide example 3 -->
+        <section class="py-6">
+
+            <div class="container mx-auto px-6 sm:px-0">
+
+                <div class="bg-base-200 p-6 rounded-2xl">
+
+                    <!-------------------->
+                    <!-- section header -->
+                    <header class="mb-6">
+                        <div class="pb-3">
+                            <h3 class="text-4xl mr-4 pl-6 block md:inline font-bold text-primary">Slide Example 3<span class="ml-1">:</span></h3>
+                            <p class="text-3xl block pl-6 md:pl-0 md:inline">Scale & Fade, no stagger, all intervals 1 sec</p>
+                        </div>
+                        <div class="glass h-3 shadow-none rounded-b-2xl"></div>
+                    </header>
+                    <!-- end section header -->
+                    <!------------------------>
+
+
+                    <!------------------------------------>
+                    <!-- btn: slide toggle -->
+                    <div class="mb-6 w-[50%] mx-auto">
+
+                        <button id="btn_slideExample2" class="btn btn-neutral btn-block text-xl"
+                                onclick="slide3.toggleSlide()">
+
+                            <!-- icon: up/down -->
+                            <i id="slideExample3_icon" class="fa-solid fa-rotate transition-transform duration-300"></i>
+
+                        </button>
+
+                    </div>
+                    <!-- end btn: slide toggle -->
+                    <!---------------------------------------->
+
+
+                    <!--=====================================-->
+                    <!-- example content -->
+                    <div id="slideExample3_container" class="transition-all duration-1000 fade faded-in scale-y-100 max-h-[500px]">
+
+                        <!-- checkbox for slide toggle -->
+                        <input type="checkbox" id="slideExample3_checkbox" class="hidden" checked>
+
+                        <p class="text-2xl mb-6">SLIDE EXAMPLE CONTENTS</p>
+                        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt dolore ex harum inventore labore laudantium officia, perspiciatis porro quaerat rem reprehenderit suscipit veritatis. Architecto aspernatur at maxime quae velit?</span><span>Ad autem, blanditiis consectetur consequuntur dignissimos et facere nulla praesentium quae, quibusdam quisquam totam. Adipisci, aut doloremque error excepturi facilis iusto, nihil nisi officiis quaerat, quis reiciendis tempora! Quis, suscipit.</span><span>Accusantium amet atque consectetur distinctio doloremque dolorum eligendi eum facilis fugit impedit in modi mollitia nemo nostrum obcaecati quas repellendus rerum velit, voluptatem voluptatibus? Ab error non porro quos reprehenderit?</span><span>Ab accusamus ad cum eligendi minima nam optio quia veniam. Asperiores at consectetur dolorem, exercitationem in iusto magnam molestiae nam nihil praesentium quo rem repudiandae sequi tempore vel vero voluptate?</span><span>Aliquam aliquid, assumenda beatae consequatur cum ducimus hic illum impedit inventore, ipsam provident qui quia quibusdam sed suscipit voluptate voluptatibus? A atque earum, laudantium maiores tempore temporibus. Iste, necessitatibus, recusandae.</span><span>Accusantium beatae cupiditate dignissimos, exercitationem laudantium maiores odit pariatur qui saepe vitae. Aliquid, esse eveniet ipsam itaque nemo recusandae sed ullam? A aspernatur culpa cumque eum ex, labore nostrum quis?</span><span>Ab, aperiam aut commodi debitis delectus ducimus harum ipsum magni molestiae, necessitatibus nesciunt non rerum sequi sint velit. Aut est, ex harum inventore odio porro qui totam. Asperiores, deleniti, rem.</span></p>
+
+                    </div>
+                    <!-- end example content -->
+                    <!--=========================================-->
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+        <!-- end section: slide example 3 -->
+        <!--******************************************************-->
+
+        <!--******************************************************-->
+        <!-- section: slide example 4 -->
+        <section class="py-6">
+
+            <div class="container mx-auto px-6 sm:px-0">
+
+                <div class="bg-base-200 p-6 rounded-2xl">
+
+                    <!-------------------->
+                    <!-- section header -->
+                    <header class="mb-6">
+                        <div class="pb-3">
+                            <h3 class="text-4xl mr-4 pl-6 block md:inline font-bold text-primary">Slide Example 4<span class="ml-1">:</span></h3>
+                            <p class="text-3xl block pl-6 md:pl-0 md:inline">Scale, 1 sec stagger</p>
+                        </div>
+                        <div class="glass h-3 shadow-none rounded-b-2xl"></div>
+                    </header>
+                    <!-- end section header -->
+                    <!------------------------>
+
+
+                    <!------------------------------------>
+                    <!-- btn: slide toggle -->
+                    <div class="mb-6 w-[50%] mx-auto">
+
+                        <button id="btn_slideExample2" class="btn btn-neutral btn-block text-xl"
+                                onclick="slide4.toggleSlide()">
+
+                            <!-- icon: up/down -->
+                            <i id="slideExample4_icon" class="fa-solid fa-rotate transition-transform duration-300"></i>
+
+                        </button>
+
+                    </div>
+                    <!-- end btn: slide toggle -->
+                    <!---------------------------------------->
+
+
+                    <!--=====================================-->
+                    <!-- example content -->
+                    <div id="slideExample4_container" class="transition-all duration-1000 fade faded-in scale-y-100 max-h-[500px]">
+
+                        <!-- checkbox for slide toggle -->
+                        <input type="checkbox" id="slideExample4_checkbox" class="hidden" checked>
+
+                        <p class="text-2xl mb-6">SLIDE EXAMPLE CONTENTS</p>
+                        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt dolore ex harum inventore labore laudantium officia, perspiciatis porro quaerat rem reprehenderit suscipit veritatis. Architecto aspernatur at maxime quae velit?</span><span>Ad autem, blanditiis consectetur consequuntur dignissimos et facere nulla praesentium quae, quibusdam quisquam totam. Adipisci, aut doloremque error excepturi facilis iusto, nihil nisi officiis quaerat, quis reiciendis tempora! Quis, suscipit.</span><span>Accusantium amet atque consectetur distinctio doloremque dolorum eligendi eum facilis fugit impedit in modi mollitia nemo nostrum obcaecati quas repellendus rerum velit, voluptatem voluptatibus? Ab error non porro quos reprehenderit?</span><span>Ab accusamus ad cum eligendi minima nam optio quia veniam. Asperiores at consectetur dolorem, exercitationem in iusto magnam molestiae nam nihil praesentium quo rem repudiandae sequi tempore vel vero voluptate?</span><span>Aliquam aliquid, assumenda beatae consequatur cum ducimus hic illum impedit inventore, ipsam provident qui quia quibusdam sed suscipit voluptate voluptatibus? A atque earum, laudantium maiores tempore temporibus. Iste, necessitatibus, recusandae.</span><span>Accusantium beatae cupiditate dignissimos, exercitationem laudantium maiores odit pariatur qui saepe vitae. Aliquid, esse eveniet ipsam itaque nemo recusandae sed ullam? A aspernatur culpa cumque eum ex, labore nostrum quis?</span><span>Ab, aperiam aut commodi debitis delectus ducimus harum ipsum magni molestiae, necessitatibus nesciunt non rerum sequi sint velit. Aut est, ex harum inventore odio porro qui totam. Asperiores, deleniti, rem.</span></p>
+
+                    </div>
+                    <!-- end example content -->
+                    <!--=========================================-->
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- end section: slide example 4 -->
+        <!--******************************************************-->
+
+    </main>
+    <!-- end main content -->
+
+	
+	</body>
+	
+	<script src="slide.js"></script>
+
+    <script>
+
+        /***********************************/
+        // slide example 1
+
+        slideEls =
+            {
+                checkBox: 'slideExample_checkbox',
+                container: 'slideExample_container',
+                icon: 'slideExample_icon',
+            }
+
+        // init Slide
+        const slide1 = new Slide(slideEls.checkBox, slideEls.container, 'scale', 1000, false, 1000, false, 'max-h-[500px]', slideEls.icon, 1000, 1000);
+
+        // end slide example 1
+        /**************************************/
+
+
+        /***********************************/
+        // slide example 2
+
+        slideEls2 =
+            {
+                checkBox: 'slideExample2_checkbox',
+                container: 'slideExample2_container',
+                icon: 'slideExample2_icon',
+            }
+
+        // init Slide
+        const slide2 = new Slide(slideEls2.checkBox, slideEls2.container, 'fade', 1000, false, 1000, false, 'max-h-[500px]', slideEls2.icon, 1000, 1000);
+
+        // end slide example 2
+        /**************************************/
+
+
+        /***********************************/
+        // slide example 3
+
+        slideEls3 =
+            {
+                checkBox: 'slideExample3_checkbox',
+                container: 'slideExample3_container',
+                icon: 'slideExample3_icon',
+            }
+
+        // init Slide
+        const slide3 = new Slide(slideEls3.checkBox, slideEls3.container, 'both', 1000, false, 1000, false, 'max-h-[500px]', slideEls3.icon, 1000, 1000);
+
+        // end slide example 2
+        /**************************************/
+
+
+        /***********************************/
+        // slide example 4
+
+        slideEls4 =
+            {
+                checkBox: 'slideExample4_checkbox',
+                container: 'slideExample4_container',
+                icon: 'slideExample4_icon',
+            }
+
+        // init Slide
+        const slide4 = new Slide(slideEls4.checkBox, slideEls4.container, 'both', 1000, true, 1000, true, 'max-h-[500px]', slideEls4.icon, 2000, 2000);
+
+        // end slide example 2
+        /**************************************/
+
+    </script>
+  
+</html>
